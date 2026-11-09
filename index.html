@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Além da Imaginação — Globo de Palavras</title>
+    <meta name="description" content="Globo interativo de palavras e significados, com uma mensagem animada e um convite para um date." />
+    <meta property="og:title" content="Além da Imaginação — Globo de Palavras" />
+    <meta property="og:description" content="Uma mensagem animada, um globo de palavras e um convite para um date." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./CSS/Style.css" />
+  </head>
+  <body>
+    <!-- Frase inicial (montada letra por letra pelo JS) -->
+    <div class="intro" id="intro">
+      <p class="intro-text" id="intro-text"></p>
+    </div>
+
+    <!-- Globo -->
+    <div class="globe-wrapper" id="globe-wrapper">
+      <div class="globe" id="globe"></div>
+      <p class="hint">Arraste para girar o globo na direção que quiser · clique numa palavra</p>
+      <p class="hint credit">Feito com carinho por
+        <span class="luis" tabindex="0">Luís<img src="./Assets/luis.jpeg" alt="Luís" class="luis-foto" /></span>
+        <button class="cal-btn" id="cal-btn" aria-label="Marcar nosso date" title="Vamos marcar nosso Date??">📅</button>
+      </p>
+    </div>
+
+    <!-- Caixinha lateral -->
+    <aside class="panel" id="panel" aria-hidden="true">
+      <button class="panel-close" id="panel-close" aria-label="Fechar">×</button>
+      <h2 class="panel-title" id="panel-title"></h2>
+      <p class="panel-label">Significado</p>
+      <p class="panel-meaning" id="panel-meaning"></p>
+      <div class="panel-why" id="panel-why-box">
+        <p class="panel-label">Por que você é assim</p>
+        <p class="panel-why-text" id="panel-why"></p>
+      </div>
+    </aside>
+
+    <!-- Marcar o date -->
+    <div class="date-overlay" id="date-overlay" aria-hidden="true">
+      <div class="date-box" role="dialog" aria-labelledby="date-title">
+        <button class="panel-close" id="date-close" aria-label="Fechar">×</button>
+        <h2 class="date-title" id="date-title">Vamos marcar nosso Date??</h2>
+        <ol class="date-steps" id="date-steps"><li>Dia</li><li>Cidade</li><li>Lugar</li><li>Avisar</li></ol>
+        <div id="date-body"></div>
+        <div class="date-nav"><button class="date-back" id="date-back">← Voltar</button></div>
+      </div>
+    </div>
+
+    <script src="./JS/palavras.js"></script>
+    <script src="./JS/app.js"></script>
+    <script src="./JS/date.js"></script>
+  </body>
+</html>
